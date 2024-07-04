@@ -1,6 +1,6 @@
 "use client"
 
-import { blogs } from "@/testing data/blogs";
+import { blogs as bg } from "@/testing data/blogs";
 import BlogCard from "./blog-card";
 import { useEffect, useState } from "react";
 
