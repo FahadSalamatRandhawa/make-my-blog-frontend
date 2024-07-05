@@ -2,7 +2,7 @@
 
 import { userState } from "@/stores/zustand.store";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { useRouter } from "next/navigation";
 
 export function UserModal(){
@@ -28,7 +28,7 @@ export function UserModal(){
                 </Avatar>
         </DialogTrigger>
             <DialogContent>
-                <DialogHeader className=" text-lightblack">{user.name}</DialogHeader>
+                <DialogTitle className=" text-lightblack">{user.name}</DialogTitle>
                 <DialogDescription>api : {user.apikey}</DialogDescription>
 
                 <DialogClose className=" bg-maroon py-2 px-3 text-center hover:opacity-80" onClick={handleLogout}>Logout</DialogClose>
