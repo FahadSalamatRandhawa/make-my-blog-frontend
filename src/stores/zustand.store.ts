@@ -14,7 +14,8 @@ interface userState{
         token:string|null,
         apikey:string|null,
     }
-    login:(email:string,name:string,token:string,apikey:string)=>void
+    login:(email:string,name:string,token:string,apikey:string)=>void,
+    logout:()=>void
 }
 export const userState=create<userState>((set)=>({
     user:{
@@ -24,5 +25,6 @@ export const userState=create<userState>((set)=>({
         token:null,
         apikey:null
     },
-    login:(email:string,name:string,token:string,apikey:string)=>set((state:{user:any})=>({user:{isLoggedIn:true,email:email,name:name,token:token,apikey:apikey}}))
+    login:(email:string,name:string,token:string,apikey:string)=>set((state:{user:any})=>({user:{isLoggedIn:true,email:email,name:name,token:token,apikey:apikey}})),
+    logout:()=>set((state:{user:any})=>({user:{isLoggedIn:false, email:null, name:null, token:null, apikey:null}}))
 }))

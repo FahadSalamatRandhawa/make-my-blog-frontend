@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 import { signupModal, userState } from "@/stores/zustand.store";
+import { UserModal } from "./Navigation/userModal";
 
   
 export default function Navigation(){
@@ -43,10 +44,7 @@ export default function Navigation(){
             {
                 !isLoggedIn?<Button onClick={openLoginSignup} size={"lg"}>{open?"close":"Signup | Login"}</Button>
                 :
-                    <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>{name}</AvatarFallback>
-                    </Avatar>
+                <UserModal />
 
             }
 

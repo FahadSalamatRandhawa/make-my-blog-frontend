@@ -55,14 +55,25 @@ export default function Home(){
     
     }
     return(
-        <div className=" min-h-screen flex flex-col bg-darkbrown">
-            <div className=" grid grid-cols-1 bg-white/80 gap-4">
-            <Input value={topic} onChange={((e)=>setTopic(e.target.value))} />
-            <Input value={instructions} onChange={((e)=>setInstructions(e.target.value))} />
-            <Input type="number" value={pages} onChange={((e)=>setPages(parseInt(e.target.value)))} />
+        <div className=" min-h-screen flex flex-col items-center bg-darkbrown p lg:p-1 xl:p-2">
+            <div className=" md:w-[80%] grid-cols-1 gap-5 mt-10 bg-dimwhite/70 ">
+            <>
+                <label className="text-black">Topic</label>
+                <Input value={topic} onChange={((e)=>setTopic(e.target.value))} />
+            </>
+            <>
+                <label className="text-black">Additional Instructions</label>
+                <Input value={instructions} onChange={((e)=>setInstructions(e.target.value))} />
+            </>
+            <>
+                <label className="text-black">Pages</label>
+                <Input type="number" value={pages} onChange={((e)=>setPages(parseInt(e.target.value)))} />
+            </>
+
+            <Button className=" w-full mt-7" onClick={createBlog} >Create</Button>
             </div>
 
-            <Button onClick={createBlog} >Create</Button>
+
         </div>
     )
 }

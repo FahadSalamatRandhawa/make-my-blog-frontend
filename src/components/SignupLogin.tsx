@@ -36,6 +36,11 @@ export default function SignupLogin(){
                     description:"redirecting..."
                 })
                 login(loginResponse.email,loginResponse.name,loginResponse.token,loginResponse.apikey)
+                localStorage.setItem("apikey", loginResponse.apikey)
+                localStorage.setItem("name",loginResponse.name)
+                localStorage.setItem("email",loginResponse.email)
+                localStorage.setItem("token", loginResponse.token)
+
                 router.push("/dashboard")
             }else{
                 toast({
